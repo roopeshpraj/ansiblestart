@@ -5,7 +5,8 @@ sudo apt-get update
 sudo apt-get install virtualbox
 sudo apt-get install virtualbox-dkms
 
-sudo apt-get install vagrant (?)
+#install vagrant
+sudo apt-get install vagrant
 
 #vagrant box add debian/jessie64 https://atlas.hashicorp.com/debian/boxes/jessie64
 vagrant box add precise32 http://files.vagrantup.com/precise32.box
@@ -20,12 +21,6 @@ config.vm.box = "precise32"
 mkdir test
 cd test
 touch VagrantFile
-
-'''
-# Defines our Vagrant environment
-#
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
 
@@ -73,33 +68,14 @@ vagrant ssh
 exit
 vagrant destroy
 
-Public catalogue https://atlas.hashicorp.com/boxes/search?_ga=2.190141867.1636905618.1493802182-1441353024.1491222537
-Discover https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=debian
-
 vagrant@mgmt:~/.ssh$ ssh-copy-id vagrant@lb
 
-agrant@mgmt:~/.ssh$ ssh vagrant@lb
-Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+vagrant@mgmt:~/.ssh$ ssh vagrant@lb
 
- * Documentation:  https://help.ubuntu.com/
-New release '14.04.5 LTS' available.
-Run 'do-release-upgrade' to upgrade to it.
-
-Welcome to your Vagrant-built virtual machine.
-Last login: Mon May  8 11:06:36 2017 from 10.0.15.10
 vagrant@lb:~$ exit
-logout
-Connection to lb closed.
+
 vagrant@mgmt:~/.ssh$ ssh lb
-Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
 
- * Documentation:  https://help.ubuntu.com/
-New release '14.04.5 LTS' available.
-Run 'do-release-upgrade' to upgrade to it.
-
-Welcome to your Vagrant-built virtual machine.
-Last login: Mon May  8 11:31:45 2017 from 10.0.15.10
 vagrant@lb:~$ exit
+
 logout
-
-
